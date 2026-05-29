@@ -1,22 +1,24 @@
-import Hero from "../src/components/section/Hero";
-import Footer from "./components/layout/Footer";
+import { BrowserRouter } from "react-router-dom";
+
 import Navbar from "./components/layout/Navbar";
-import Categories from "./components/section/categories";
-import FeaturedProducts from "./components/section/FeatureProducts";
+import Footer from "./components/layout/Footer";
 import FloatingWhatsApp from "./components/section/FloatingWhatsApp";
-import WhyChooseUs from "./components/section/WhyChooseUs";
+
+import AppRoutes from "./routes/AppRoutes";
 
 function App() {
   return (
-    <main>
+    <BrowserRouter>
       <Navbar />
-      <Hero />
-      <Categories />
-      <FeaturedProducts />
-      <WhyChooseUs />
+
+      <main>
+        <AppRoutes />
+      </main>
+
       <Footer />
+
       <FloatingWhatsApp />
-    </main>
+    </BrowserRouter>
   );
 }
 

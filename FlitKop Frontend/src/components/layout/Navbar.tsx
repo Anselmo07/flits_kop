@@ -1,32 +1,67 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+
 import "./Navbar.css";
+
+import logo from "../../assets/logo.jpeg";
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
+
+  const [scrolled, setScrolled] =
+    useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 40);
     };
 
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener(
+      "scroll",
+      handleScroll
+    );
 
-    return () => window.removeEventListener("scroll", handleScroll);
+    return () =>
+      window.removeEventListener(
+        "scroll",
+        handleScroll
+      );
   }, []);
 
   return (
-    <header className={`navbar ${scrolled ? "navbar--scrolled" : ""}`}>
+    <header
+      className={`navbar ${
+        scrolled ? "navbar--scrolled" : ""
+      }`}
+    >
       <div className="navbar__container">
-        <a href="/" className="navbar__logo">
-          FLITS_KOP
-        </a>
+        {/* LOGO */}
+        <Link to="/" className="navbar__logo">
+          <img
+            src={logo}
+            alt="Marianela FK"
+          />
+        </Link>
 
-        <nav className={`navbar__menu ${menuOpen ? "active" : ""}`}>
-          <a href="/">Inicio</a>
-          <a href="/">Colecciones</a>
-          <a href="/">Destacados</a>
-          <a href="/">Contacto</a>
+        {/* MENU */}
+        <nav
+          className={`navbar__menu ${
+            menuOpen ? "active" : ""
+          }`}
+        >
+          <Link to="/">Inicio</Link>
+
+          <Link to="/catalogo">
+            Colecciones
+          </Link>
+
+          <Link to="/#destacados">
+            Destacados
+          </Link>
+
+          <Link to="/">
+            Contacto
+          </Link>
 
           <a
             href="https://wa.me/5490000000000"
@@ -38,6 +73,7 @@ export default function Navbar() {
           </a>
         </nav>
 
+        {/* CTA DESKTOP */}
         <a
           href="https://wa.me/5490000000000"
           className="navbar__cta desktop"
@@ -47,9 +83,14 @@ export default function Navbar() {
           WhatsApp
         </a>
 
+        {/* TOGGLE */}
         <button
-          className={`navbar__toggle ${menuOpen ? "active" : ""}`}
-          onClick={() => setMenuOpen(!menuOpen)}
+          className={`navbar__toggle ${
+            menuOpen ? "active" : ""
+          }`}
+          onClick={() =>
+            setMenuOpen(!menuOpen)
+          }
         >
           <span />
           <span />

@@ -3,6 +3,7 @@ import "./FeaturedProducts.css";
 import img1 from "../../assets/feature1.jpeg";
 import img2 from "../../assets/feature2.jpeg";
 import img3 from "../../assets/feature3.jpeg";
+import img4 from "../../assets/feature4.jpeg";
 
 const products = [
   {
@@ -31,13 +32,13 @@ const products = [
     title: "Soft Abstract",
     price: "$41.000",
     image:
-      "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?q=80&w=1200&auto=format&fit=crop",
+      img4,
   },
 ];
 
 export default function FeaturedProducts() {
   return (
-    <section className="featured-products">
+    <section className="featured-products" id="destacados">
       <div className="featured-products__header">
         <span>Destacados</span>
 

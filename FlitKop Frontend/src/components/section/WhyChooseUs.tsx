@@ -1,52 +1,71 @@
 import "./WhyChooseUs.css";
 
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Pagination, Autoplay } from "swiper/modules";
+
+import "swiper/css";
+import "swiper/css/pagination";
+
+import i1 from "../../assets/envio.png";
+import i2 from "../../assets/calidad.png";
+import i3 from "../../assets/cliente.png";
+import i4 from "../../assets/safe.png";
+
 const benefits = [
   {
-    icon: "🚚",
+    icon: i1,
     title: "Envíos a todo el país",
-    description:
-      "Recibí tus cuadros cuidadosamente protegidos y listos para decorar.",
+    description: "con seguimiento online",
   },
   {
-    icon: "✨",
+    icon: i2,
     title: "Calidad premium",
-    description:
-      "Trabajamos con materiales duraderos y terminaciones de alta calidad.",
+    description: "materiales seleccionados",
   },
   {
-    icon: "🎨",
+    icon: i3,
     title: "Diseños exclusivos",
-    description:
-      "Colecciones modernas y elegantes para transformar cualquier espacio.",
+    description: "obras únicas y modernas",
   },
   {
-    icon: "💬",
+    icon: i4,
     title: "Atención personalizada",
-    description:
-      "Te ayudamos a encontrar el cuadro ideal para tu hogar.",
+    description: "te ayudamos a elegir",
   },
 ];
 
 export default function WhyChooseUs() {
   return (
-    <section className="why-choose-us">
-      <div className="why-choose-us__header">
-        <span>Flits_Kop</span>
-
-        <h2>Decoración pensada para cada rincón de tu hogar</h2>
-      </div>
-
-      <div className="benefits-grid">
+    <section className="why">
+      <Swiper
+        modules={[Pagination, Autoplay]}
+        autoplay={{
+          delay: 3000,
+          disableOnInteraction: false,
+        }}
+        pagination={{
+          clickable: true,
+        }}
+        loop={true}
+        speed={800}
+        slidesPerView={1}
+      >
         {benefits.map((benefit) => (
-          <article className="benefit-card" key={benefit.title}>
-            <div className="benefit-card__icon">{benefit.icon}</div>
+          <SwiperSlide key={benefit.title}>
+            <article className="why-card">
+              <div className="why-card__icon">
+                <img src={benefit.icon} alt={benefit.title} />
+              </div>
 
-            <h3>{benefit.title}</h3>
+              <div className="why-card__content">
+                <h3>{benefit.title}</h3>
 
-            <p>{benefit.description}</p>
-          </article>
+                <p>{benefit.description}</p>
+              </div>
+            </article>
+          </SwiperSlide>
         ))}
-      </div>
+      </Swiper>
     </section>
   );
 }

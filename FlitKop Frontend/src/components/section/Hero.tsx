@@ -18,7 +18,7 @@ export default function Hero() {
           </p>
 
           <div className="hero__actions">
-            <a href="/">Ver colección</a>
+            <a href="/catalogo">Ver colección</a>
 
             <a
               href="https://wa.me/5490000000000"

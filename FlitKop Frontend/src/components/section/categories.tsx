@@ -1,5 +1,7 @@
 import "./Categories.css";
 
+import { Link } from "react-router-dom";
+
 const categories = [
   {
     title: "Abstractos",
@@ -24,20 +26,33 @@ export default function Categories() {
       <div className="categories__header">
         <span>Nuestras colecciones</span>
 
-        <h2>Elegí el estilo perfecto para tu espacio</h2>
+        <h2>
+          Elegí el estilo perfecto para tu espacio
+        </h2>
       </div>
 
       <div className="categories__grid">
         {categories.map((category) => (
-          <article className="category-card" key={category.title}>
-            <img src={category.image} alt={category.title} />
+          <article
+            className="category-card"
+            key={category.title}
+          >
+            <img
+              src={category.image}
+              alt={category.title}
+            />
 
             <div className="category-card__overlay" />
 
             <div className="category-card__content">
               <h3>{category.title}</h3>
 
-              <button>Ver más</button>
+              <Link
+                to={`/catalogo?categoria=${category.title}`}
+                className="category-link"
+              >
+                Ver más
+              </Link>
             </div>
           </article>
         ))}

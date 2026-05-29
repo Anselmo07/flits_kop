@@ -1,5 +1,7 @@
 import "./FloatingWhatsApp.css";
 
+import wsp from '../../assets/whatsappIcon.png'
+
 export default function FloatingWhatsApp() {
   return (
     <a
@@ -8,7 +10,7 @@ export default function FloatingWhatsApp() {
       target="_blank"
       rel="noreferrer"
     >
-      💬
+      <img src={wsp} alt="whatsapp" />
     </a>
   );
 }

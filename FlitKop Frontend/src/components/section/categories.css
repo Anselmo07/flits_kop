@@ -49,8 +49,7 @@
 }
 
 .category-card__overlay {
-  position: absolute;
-  inset: 0;
+  pointer-events: none;
 
   background: linear-gradient(
     to top,
@@ -86,6 +85,8 @@
   cursor: pointer;
 
   transition: all 0.3s ease;
+
+  z-index: 999;
 }
 
 .category-card__content button:hover {

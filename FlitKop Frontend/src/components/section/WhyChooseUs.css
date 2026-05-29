@@ -1,102 +1,68 @@
-.why-choose-us {
-  padding: 5rem 1.5rem;
-  background: linear-gradient(to bottom, #ffffff, #f7f1f8);
+.why {
+  padding: 4rem 1.5rem;
+
+  background: #f8f5fa;
 }
 
-.why-choose-us__header {
-  text-align: center;
-  margin-bottom: 3rem;
+.why-card {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+
+  background: #f1eef3;
+
+  border-radius: 24px;
+
+  padding: 1.5rem;
 }
 
-.why-choose-us__header span {
-  color: #a67ba6;
-  font-size: 0.9rem;
-  font-weight: 600;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-}
-
-.why-choose-us__header h2 {
-  margin-top: 1rem;
-  font-size: 2rem;
-  color: #2d2d2d;
-  line-height: 1.2;
-}
-
-.benefits-grid {
-  display: grid;
-  gap: 1.5rem;
-}
-
-.benefit-card {
-  background: rgba(255, 255, 255, 0.8);
-
-  backdrop-filter: blur(10px);
-
-  border: 1px solid rgba(200, 162, 200, 0.2);
-
-  border-radius: 28px;
-
-  padding: 2rem;
-
-  transition:
-    transform 0.3s ease,
-    box-shadow 0.3s ease;
-}
-
-.benefit-card:hover {
-  transform: translateY(-4px);
-
-  box-shadow: 0 20px 40px rgba(166, 123, 166, 0.12);
-}
-
-.benefit-card__icon {
+.why-card__icon img{
   width: 64px;
   height: 64px;
+
+  min-width: 64px;
+
+  border-radius: 50%;
+
+  border: 2px solid #1f1f1f20;
 
   display: flex;
   align-items: center;
   justify-content: center;
 
-  border-radius: 20px;
-
-  background: #f3e8f3;
-
-  font-size: 1.8rem;
-
-  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
 }
 
-.benefit-card h3 {
-  font-size: 1.2rem;
-  color: #2d2d2d;
-  margin-bottom: 1rem;
+.why-card__content h3 {
+  font-size: 1.1rem;
+  color: #1f1f1f;
+
+  margin-bottom: 0.3rem;
 }
 
-.benefit-card p {
-  color: #6d6d6d;
-  line-height: 1.7;
-  font-size: 0.98rem;
+.why-card__content p {
+  color: #6f627a;
+
+  font-size: 0.95rem;
 }
 
-@media (min-width: 768px) {
-  .why-choose-us {
-    padding: 7rem 4rem;
-  }
+/* DOTS */
 
-  .benefits-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
+.swiper-pagination {
+  position: relative !important;
 
-  .why-choose-us__header h2 {
-    font-size: 3rem;
-    max-width: 700px;
-    margin-inline: auto;
-  }
+  margin-top: 1.5rem;
 }
 
-@media (min-width: 1100px) {
-  .benefits-grid {
-    grid-template-columns: repeat(4, 1fr);
-  }
+.swiper-pagination-bullet {
+  width: 8px;
+  height: 8px;
+
+  background: #cdbfd9;
+
+  opacity: 1;
+}
+
+.swiper-pagination-bullet-active {
+  background: #8e73a7;
 }
